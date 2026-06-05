@@ -1,0 +1,1008 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hari Acharya | Business Analyst Portfolio</title>
+    <meta name="description" content="Hari Acharya — Business Analyst specializing in Agile delivery, data analytics, SQL, Power BI and Tableau. M.S. Data Analytics candidate.">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #6a11cb;
+            --secondary: #2575fc;
+            --accent: #ffdd57;
+            --dark: #1c1530;
+            --light: #f8f9fa;
+            --grad: linear-gradient(135deg, #6a11cb, #2575fc);
+        }
+
+        html { scroll-behavior: smooth; scroll-padding-top: 80px; }
+
+        body {
+            font-family: 'Montserrat', sans-serif;
+            line-height: 1.7;
+            color: #444;
+            overflow-x: hidden;
+        }
+
+        ::selection { background: var(--primary); color: #fff; }
+
+        /* ---------- Navbar ---------- */
+        .navbar {
+            background: linear-gradient(135deg, rgba(106, 17, 203, .95), rgba(37, 117, 252, .95));
+            backdrop-filter: blur(10px);
+            box-shadow: 0 4px 18px rgba(0, 0, 0, 0.15);
+            transition: padding .3s ease;
+            padding: 14px 0;
+        }
+        .navbar.shrink { padding: 6px 0; }
+        .navbar-brand { font-weight: 800; color: #fff !important; font-size: 1.45rem; letter-spacing: .5px; }
+        .navbar-brand span { color: var(--accent); }
+        .navbar .nav-link {
+            color: #fff !important;
+            font-weight: 600;
+            margin: 0 6px;
+            position: relative;
+            transition: color .3s;
+        }
+        .navbar .nav-link::after {
+            content: '';
+            position: absolute;
+            left: 50%; bottom: 0;
+            width: 0; height: 2px;
+            background: var(--accent);
+            transition: all .3s ease;
+            transform: translateX(-50%);
+        }
+        .navbar .nav-link:hover { color: var(--accent) !important; }
+        .navbar .nav-link:hover::after, .navbar .nav-link.active::after { width: 70%; }
+
+        /* ---------- Hero ---------- */
+        .hero {
+            min-height: 100vh;
+            background: linear-gradient(135deg, #6a11cb 0%, #4a30d8 45%, #2575fc 100%);
+            display: flex;
+            align-items: center;
+            position: relative;
+            color: #fff;
+            overflow: hidden;
+            padding: 110px 0 60px;
+        }
+        .hero::before, .hero::after {
+            content: '';
+            position: absolute;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.07);
+            animation: float 9s ease-in-out infinite;
+        }
+        .hero::before { width: 420px; height: 420px; top: -120px; right: -100px; }
+        .hero::after { width: 280px; height: 280px; bottom: -90px; left: -70px; animation-delay: 3s; }
+        @keyframes float {
+            0%, 100% { transform: translateY(0) scale(1); }
+            50% { transform: translateY(-25px) scale(1.05); }
+        }
+        .hero .greeting {
+            display: inline-block;
+            background: rgba(255, 255, 255, 0.15);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            padding: 6px 18px;
+            border-radius: 50px;
+            font-size: .9rem;
+            font-weight: 600;
+            letter-spacing: 1px;
+            margin-bottom: 18px;
+            animation: fadeIn 1.2s ease-in-out;
+        }
+        .hero h1 {
+            font-size: 3.2rem;
+            font-weight: 800;
+            line-height: 1.15;
+            animation: slideIn 1.2s ease-in-out;
+        }
+        .hero h1 .highlight { color: var(--accent); }
+        .hero .typed-wrap {
+            font-size: 1.45rem;
+            font-weight: 600;
+            min-height: 2.4rem;
+            color: #eaf2ff;
+            animation: slideIn 1.5s ease-in-out;
+        }
+        .hero .typed-cursor { color: var(--accent); animation: blink .8s infinite; }
+        @keyframes blink { 50% { opacity: 0; } }
+        .hero p.tagline {
+            color: #e9e4ff;
+            font-size: 1.08rem;
+            max-width: 540px;
+            animation: slideIn 1.8s ease-in-out;
+        }
+        .btn-hero-primary {
+            background: #fff;
+            color: var(--primary);
+            font-weight: 700;
+            padding: 13px 30px;
+            border-radius: 50px;
+            border: 2px solid #fff;
+            transition: all .3s ease;
+        }
+        .btn-hero-primary:hover { background: var(--accent); border-color: var(--accent); color: var(--dark); transform: translateY(-3px); box-shadow: 0 10px 22px rgba(0,0,0,.25); }
+        .btn-hero-outline {
+            background: transparent;
+            color: #fff;
+            font-weight: 700;
+            padding: 13px 30px;
+            border-radius: 50px;
+            border: 2px solid rgba(255,255,255,.85);
+            transition: all .3s ease;
+        }
+        .btn-hero-outline:hover { background: #fff; color: var(--primary); transform: translateY(-3px); box-shadow: 0 10px 22px rgba(0,0,0,.25); }
+
+        .hero-photo-wrap { position: relative; display: inline-block; }
+        .hero-photo-wrap::before {
+            content: '';
+            position: absolute;
+            inset: -14px;
+            border-radius: 50%;
+            border: 3px dashed rgba(255, 221, 87, 0.8);
+            animation: spin 24s linear infinite;
+        }
+        @keyframes spin { to { transform: rotate(360deg); } }
+        .hero-photo {
+            width: 330px; height: 330px;
+            object-fit: cover;
+            border-radius: 50%;
+            border: 6px solid rgba(255, 255, 255, 0.9);
+            box-shadow: 0 22px 50px rgba(0, 0, 0, 0.35);
+        }
+        .hero-badge {
+            position: absolute;
+            background: #fff;
+            color: var(--dark);
+            font-size: .8rem;
+            font-weight: 700;
+            padding: 9px 16px;
+            border-radius: 50px;
+            box-shadow: 0 8px 20px rgba(0,0,0,.25);
+            white-space: nowrap;
+            animation: float 5s ease-in-out infinite;
+        }
+        .hero-badge i { color: var(--primary); margin-right: 6px; }
+        .badge-1 { top: 4%; left: -12%; }
+        .badge-2 { bottom: 10%; right: -14%; animation-delay: 1.4s; }
+        .badge-3 { bottom: -4%; left: 4%; animation-delay: 2.6s; }
+
+        .hero-arrow { position: absolute; bottom: 26px; left: 50%; transform: translateX(-50%); }
+        .hero-arrow a { color: #fff; font-size: 1.8rem; opacity: .8; animation: bounceDown 1.8s infinite; display: inline-block; }
+        @keyframes bounceDown { 0%,100% { transform: translateY(0);} 50% { transform: translateY(10px);} }
+
+        /* ---------- Sections ---------- */
+        .section { padding: 90px 0; }
+        .section-title { font-weight: 800; font-size: 2.3rem; color: var(--dark); position: relative; display: inline-block; margin-bottom: 12px; }
+        .section-title::after {
+            content: '';
+            position: absolute;
+            left: 50%; bottom: -10px;
+            transform: translateX(-50%);
+            width: 70px; height: 4px;
+            border-radius: 4px;
+            background: var(--grad);
+        }
+        .section-sub { color: #777; max-width: 680px; margin: 22px auto 0; }
+        .bg-light { background-color: #f6f7fb !important; }
+
+        /* ---------- About ---------- */
+        .about-photo {
+            width: 100%;
+            max-width: 380px;
+            border-radius: 22px;
+            box-shadow: 18px 18px 0 rgba(106, 17, 203, 0.16), 0 18px 40px rgba(0,0,0,.15);
+            transition: transform .4s ease;
+        }
+        .about-photo:hover { transform: scale(1.02) rotate(-1deg); }
+        .about-fact { display: flex; align-items: flex-start; margin-bottom: 14px; text-align: left; }
+        .about-fact i {
+            background: var(--grad);
+            color: #fff;
+            width: 42px; height: 42px;
+            min-width: 42px;
+            border-radius: 12px;
+            display: flex; align-items: center; justify-content: center;
+            margin-right: 14px;
+            font-size: 1rem;
+        }
+        .stat-box {
+            background: #fff;
+            border-radius: 16px;
+            padding: 28px 14px;
+            box-shadow: 0 8px 24px rgba(31, 24, 73, 0.08);
+            transition: transform .3s ease, box-shadow .3s ease;
+            height: 100%;
+        }
+        .stat-box:hover { transform: translateY(-8px); box-shadow: 0 16px 34px rgba(31, 24, 73, 0.15); }
+        .stat-box h3 {
+            font-weight: 800;
+            font-size: 2.3rem;
+            background: var(--grad);
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 4px;
+        }
+        .stat-box p { color: #666; font-weight: 600; margin: 0; font-size: .92rem; }
+
+        /* ---------- Experience timeline ---------- */
+        .timeline { position: relative; max-width: 920px; margin: 40px auto 0; }
+        .timeline::before {
+            content: '';
+            position: absolute;
+            left: 50%; top: 0; bottom: 0;
+            width: 4px;
+            background: var(--grad);
+            border-radius: 4px;
+            transform: translateX(-50%);
+        }
+        .timeline-item { position: relative; width: 50%; padding: 0 44px 50px; }
+        .timeline-item:nth-child(odd) { left: 0; text-align: right; }
+        .timeline-item:nth-child(even) { left: 50%; text-align: left; }
+        .timeline-dot {
+            position: absolute;
+            top: 6px;
+            width: 20px; height: 20px;
+            background: #fff;
+            border: 5px solid var(--primary);
+            border-radius: 50%;
+            z-index: 2;
+        }
+        .timeline-item:nth-child(odd) .timeline-dot { right: -10px; }
+        .timeline-item:nth-child(even) .timeline-dot { left: -10px; }
+        .timeline-card {
+            background: #fff;
+            border-radius: 16px;
+            padding: 26px;
+            box-shadow: 0 10px 28px rgba(31, 24, 73, 0.1);
+            transition: transform .3s ease, box-shadow .3s ease;
+            text-align: left;
+        }
+        .timeline-card:hover { transform: translateY(-6px); box-shadow: 0 18px 36px rgba(31, 24, 73, 0.18); }
+        .timeline-card .date {
+            display: inline-block;
+            background: var(--grad);
+            color: #fff;
+            font-size: .76rem;
+            font-weight: 700;
+            padding: 4px 14px;
+            border-radius: 50px;
+            margin-bottom: 10px;
+            letter-spacing: .5px;
+        }
+        .timeline-card h5 { font-weight: 700; color: var(--dark); margin-bottom: 2px; }
+        .timeline-card .company { color: var(--primary); font-weight: 600; font-size: .92rem; margin-bottom: 10px; }
+        .timeline-card ul { padding-left: 18px; margin: 0; color: #555; font-size: .92rem; }
+        .timeline-card ul li { margin-bottom: 6px; }
+        @media (max-width: 768px) {
+            .timeline::before { left: 12px; }
+            .timeline-item { width: 100%; left: 0 !important; text-align: left !important; padding: 0 0 40px 44px; }
+            .timeline-item .timeline-dot { left: 2px !important; right: auto !important; }
+        }
+
+        /* ---------- Skills ---------- */
+        .skill-card {
+            background: #fff;
+            border-radius: 14px;
+            padding: 20px 26px;
+            box-shadow: 0 8px 20px rgba(31, 24, 73, 0.08);
+            transition: transform .3s ease, box-shadow .3s ease;
+            min-width: 130px;
+        }
+        .skill-card:hover { transform: translateY(-8px) scale(1.05); box-shadow: 0 16px 30px rgba(31, 24, 73, 0.16); }
+        .skill-card i { font-size: 2.1rem; margin-bottom: 8px; display: block; }
+        .skill-card p { font-weight: 600; color: var(--dark); margin: 0; font-size: .92rem; }
+
+        .chip {
+            display: inline-block;
+            padding: 11px 22px;
+            margin: 7px;
+            border-radius: 50px;
+            font-weight: 600;
+            font-size: .92rem;
+            color: #fff;
+            box-shadow: 0 6px 16px rgba(0, 0, 0, 0.15);
+            transition: transform .3s ease, box-shadow .3s ease;
+            cursor: default;
+        }
+        .chip:hover { transform: translateY(-5px) scale(1.06); box-shadow: 0 12px 24px rgba(0, 0, 0, 0.22); }
+        .chip-ba { background: linear-gradient(135deg, #6a11cb, #8e54e9); }
+        .chip-data { background: linear-gradient(135deg, #2575fc, #48d1cc); }
+        .chip-soft { background: linear-gradient(135deg, #ff6a88, #ff9a8b); }
+        .skills-group-title { font-weight: 700; color: var(--dark); margin: 44px 0 8px; }
+        .skills-group-title i { color: var(--primary); margin-right: 8px; }
+
+        /* ---------- Projects ---------- */
+        .work-card {
+            background: linear-gradient(145deg, #fff, #fbfbff);
+            border: none;
+            border-radius: 18px;
+            overflow: hidden;
+            box-shadow: 0 10px 28px rgba(31, 24, 73, 0.1);
+            transition: transform .35s ease, box-shadow .35s ease;
+            height: 100%;
+        }
+        .work-card:hover { transform: translateY(-10px); box-shadow: 0 22px 44px rgba(31, 24, 73, 0.2); }
+        .work-card .card-top {
+            height: 7px;
+            background: var(--grad);
+        }
+        .work-card .icon-wrap {
+            width: 62px; height: 62px;
+            border-radius: 16px;
+            background: var(--grad);
+            color: #fff;
+            display: flex; align-items: center; justify-content: center;
+            font-size: 1.5rem;
+            margin-bottom: 18px;
+            box-shadow: 0 8px 18px rgba(106, 17, 203, 0.35);
+        }
+        .work-card .card-title { font-weight: 700; color: var(--dark); }
+        .work-card .card-text { color: #666; font-size: .94rem; }
+        .work-card .tag {
+            display: inline-block;
+            background: #f0ecff;
+            color: var(--primary);
+            font-size: .74rem;
+            font-weight: 700;
+            padding: 4px 12px;
+            border-radius: 50px;
+            margin: 3px 3px 0 0;
+        }
+        .work-card .result {
+            color: var(--primary);
+            font-weight: 700;
+            font-size: .9rem;
+        }
+        .work-card a.project-link { color: var(--secondary); font-weight: 700; font-size: .9rem; text-decoration: none; }
+        .work-card a.project-link:hover { text-decoration: underline; }
+
+        /* ---------- Education / Certifications ---------- */
+        .edu-card {
+            background: #fff;
+            border-radius: 18px;
+            padding: 32px;
+            box-shadow: 0 10px 28px rgba(31, 24, 73, 0.1);
+            height: 100%;
+            transition: transform .3s ease;
+            text-align: left;
+        }
+        .edu-card:hover { transform: translateY(-8px); }
+        .edu-card .edu-icon {
+            width: 58px; height: 58px;
+            border-radius: 14px;
+            background: var(--grad);
+            color: #fff;
+            display: flex; align-items: center; justify-content: center;
+            font-size: 1.4rem;
+            margin-bottom: 16px;
+        }
+        .edu-card h5 { font-weight: 700; color: var(--dark); }
+        .edu-card .school { color: var(--primary); font-weight: 600; font-size: .94rem; }
+        .edu-card .meta { color: #888; font-size: .87rem; }
+        .cert-item {
+            display: flex;
+            align-items: center;
+            background: #fff;
+            border-radius: 14px;
+            padding: 18px 22px;
+            margin-bottom: 14px;
+            box-shadow: 0 8px 20px rgba(31, 24, 73, 0.08);
+            transition: transform .3s ease;
+            text-align: left;
+        }
+        .cert-item:hover { transform: translateX(8px); }
+        .cert-item i { color: var(--primary); font-size: 1.4rem; margin-right: 16px; min-width: 28px; }
+        .cert-item strong { color: var(--dark); display: block; font-size: .96rem; }
+        .cert-item span { color: #888; font-size: .84rem; }
+
+        /* ---------- Contact ---------- */
+        .contact-section {
+            background: linear-gradient(135deg, #6a11cb 0%, #2575fc 100%);
+            color: #fff;
+        }
+        .contact-section .section-title { color: #fff; }
+        .contact-section .section-title::after { background: var(--accent); }
+        .contact-section .section-sub { color: #e9e4ff; }
+        .contact-card {
+            background: rgba(255, 255, 255, 0.12);
+            border: 1px solid rgba(255, 255, 255, 0.25);
+            backdrop-filter: blur(8px);
+            border-radius: 18px;
+            padding: 28px 20px;
+            transition: transform .3s ease, background .3s ease;
+            height: 100%;
+            color: #fff;
+            display: block;
+            text-decoration: none;
+        }
+        .contact-card:hover { transform: translateY(-8px); background: rgba(255, 255, 255, 0.2); color: #fff; }
+        .contact-card i { font-size: 2rem; color: var(--accent); margin-bottom: 12px; }
+        .contact-card h6 { font-weight: 700; margin-bottom: 4px; }
+        .contact-card p { margin: 0; font-size: .88rem; color: #e9e4ff; word-break: break-all; }
+        .contact-form .form-control {
+            background: rgba(255, 255, 255, 0.12);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            color: #fff;
+            border-radius: 12px;
+            padding: 13px 18px;
+        }
+        .contact-form .form-control::placeholder { color: rgba(255, 255, 255, 0.7); }
+        .contact-form .form-control:focus {
+            background: rgba(255, 255, 255, 0.18);
+            border-color: var(--accent);
+            box-shadow: 0 0 0 .2rem rgba(255, 221, 87, 0.25);
+            color: #fff;
+        }
+        .btn-send {
+            background: var(--accent);
+            color: var(--dark);
+            font-weight: 700;
+            padding: 13px 40px;
+            border-radius: 50px;
+            border: none;
+            transition: all .3s ease;
+        }
+        .btn-send:hover { transform: translateY(-3px); box-shadow: 0 12px 24px rgba(0, 0, 0, 0.3); background: #ffe784; }
+
+        /* ---------- Footer ---------- */
+        footer { background: var(--dark); color: #cfc8e8; padding: 36px 0; }
+        .social-icons a {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 46px; height: 46px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.08);
+            color: #fff;
+            font-size: 1.2rem;
+            margin: 0 7px;
+            transition: all .3s ease;
+        }
+        .social-icons a:hover { background: var(--grad); transform: translateY(-5px) scale(1.1); }
+
+        /* ---------- Back to top ---------- */
+        #backToTop {
+            position: fixed;
+            right: 24px; bottom: 24px;
+            width: 48px; height: 48px;
+            border-radius: 50%;
+            background: var(--grad);
+            color: #fff;
+            border: none;
+            font-size: 1.1rem;
+            box-shadow: 0 10px 24px rgba(106, 17, 203, 0.4);
+            opacity: 0;
+            visibility: hidden;
+            transition: all .35s ease;
+            z-index: 999;
+        }
+        #backToTop.show { opacity: 1; visibility: visible; }
+        #backToTop:hover { transform: translateY(-5px); }
+
+        @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+        @keyframes slideIn { from { transform: translateY(50px); opacity: 0; } to { transform: translateY(0); opacity: 1; } }
+
+        @media (max-width: 991px) {
+            .hero h1 { font-size: 2.4rem; }
+            .hero-photo { width: 250px; height: 250px; }
+            .badge-1 { left: 0; }
+            .badge-2 { right: 0; }
+        }
+    </style>
+</head>
+
+<body data-aos-easing="ease" data-aos-duration="1200" data-aos-delay="0">
+
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top" id="mainNav">
+        <div class="container">
+            <a class="navbar-brand" href="#home">Hari<span> Acharya</span></a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#experience">Experience</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#skills">Skills</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#work">Projects</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#education">Education</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-7 text-start">
+                    <span class="greeting"><i class="fa-solid fa-hand-sparkles me-2"></i>WELCOME TO MY PORTFOLIO</span>
+                    <h1>Hello, I'm <span class="highlight">Hari Acharya</span></h1>
+                    <div class="typed-wrap"><span id="typed"></span><span class="typed-cursor">|</span></div>
+                    <p class="tagline mt-3">I turn business problems into clear requirements and data into decisions —
+                        with 2+ years in Business Analyst roles across telecom, security, and AI/SaaS, built on 7+ years
+                        of operations leadership.</p>
+                    <div class="d-flex flex-wrap gap-3 mt-4">
+                        <a href="resume.pdf" class="btn btn-hero-primary" download><i class="fa-solid fa-download me-2"></i>Download Resume</a>
+                        <a href="#contact" class="btn btn-hero-outline"><i class="fa-regular fa-paper-plane me-2"></i>Let's Talk</a>
+                    </div>
+                </div>
+                <div class="col-lg-5 text-center mt-5 mt-lg-0">
+                    <div class="hero-photo-wrap">
+                        <!-- Replace myphoto.jpg with your profile photo file -->
+                        <img src="myphoto.jpg" alt="Hari Acharya" class="hero-photo">
+                        <div class="hero-badge badge-1"><i class="fa-solid fa-chart-line"></i>25% Acquisition Lift</div>
+                        <div class="hero-badge badge-2"><i class="fa-solid fa-bolt"></i>95% Sprint Completion</div>
+                        <div class="hero-badge badge-3"><i class="fa-solid fa-graduation-cap"></i>M.S. Data Analytics</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="hero-arrow">
+            <a href="#about"><i class="fa-solid fa-angles-down"></i></a>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="section bg-light">
+        <div class="container text-center">
+            <h2 class="section-title" data-aos="fade-up">About Me</h2>
+            <p class="section-sub" data-aos="fade-up">Business Analyst • Data Analytics Graduate Student • Agile Practitioner</p>
+            <div class="row align-items-center mt-5">
+                <div class="col-md-5 mb-4 mb-md-0" data-aos="fade-right">
+                    <!-- Replace myphoto.jpg with your profile photo file -->
+                    <img src="myphoto.jpg" alt="Hari Acharya" class="about-photo">
+                </div>
+                <div class="col-md-7 text-start" data-aos="fade-left">
+                    <p class="lead" style="color:#555;">I'm a results-driven Business Analyst with experience spanning
+                        <strong>telecom (Charter Communications)</strong>, <strong>security (ADT)</strong>, and
+                        <strong>AI/SaaS (NLP-powered resume parsing platform)</strong>. I partner with product,
+                        engineering, and data science teams to drive process improvement, workflow optimization, and
+                        stakeholder alignment.</p>
+                    <div class="mt-4">
+                        <div class="about-fact" data-aos="fade-up">
+                            <i class="fa-solid fa-briefcase"></i>
+                            <div><strong>Experience:</strong> 2+ years in formal BA roles, built on 7+ years of operations leadership with full P&amp;L ownership.</div>
+                        </div>
+                        <div class="about-fact" data-aos="fade-up" data-aos-delay="100">
+                            <i class="fa-solid fa-graduation-cap"></i>
+                            <div><strong>Education:</strong> M.S. in Data Analytics (GPA 3.92/4.00), expected Dec 2026.</div>
+                        </div>
+                        <div class="about-fact" data-aos="fade-up" data-aos-delay="200">
+                            <i class="fa-solid fa-screwdriver-wrench"></i>
+                            <div><strong>Toolkit:</strong> SQL, Python, Power BI, Tableau, Jira, Confluence, Figma, Miro, Advanced Excel.</div>
+                        </div>
+                        <div class="about-fact" data-aos="fade-up" data-aos-delay="300">
+                            <i class="fa-solid fa-bullseye"></i>
+                            <div><strong>Targeting:</strong> Business Analyst, Technical BA, Product Analyst &amp; Technology Consulting roles.</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row mt-5 g-4">
+                <div class="col-6 col-md-3" data-aos="zoom-in"><div class="stat-box"><h3>9+</h3><p>Years Professional Experience</p></div></div>
+                <div class="col-6 col-md-3" data-aos="zoom-in" data-aos-delay="100"><div class="stat-box"><h3>50+</h3><p>User Stories Authored</p></div></div>
+                <div class="col-6 col-md-3" data-aos="zoom-in" data-aos-delay="200"><div class="stat-box"><h3>95%</h3><p>Sprint Completion Rate</p></div></div>
+                <div class="col-6 col-md-3" data-aos="zoom-in" data-aos-delay="300"><div class="stat-box"><h3>100K+</h3><p>Customer Records Analyzed</p></div></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Experience Section -->
+    <section id="experience" class="section">
+        <div class="container text-center">
+            <h2 class="section-title" data-aos="fade-up">Professional Experience</h2>
+            <p class="section-sub" data-aos="fade-up">A journey across AI/SaaS, telecom, security, and operations leadership.</p>
+            <div class="timeline">
+                <div class="timeline-item" data-aos="fade-right">
+                    <span class="timeline-dot"></span>
+                    <div class="timeline-card">
+                        <span class="date">May 2024 – Present</span>
+                        <h5>Agile Business Analyst</h5>
+                        <div class="company">Maya Partners (Client: RefineAi)</div>
+                        <ul>
+                            <li>Authored 50+ INVEST-aligned user stories for an NLP-powered resume parsing platform.</li>
+                            <li>Facilitated Agile ceremonies for a 12-person team, sustaining 95% sprint completion.</li>
+                            <li>Redesigned requirements intake, cutting rework 40% and lifting user satisfaction 30%.</li>
+                            <li>Designed UAT protocols that surfaced critical defects pre-release.</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="timeline-item" data-aos="fade-left">
+                    <span class="timeline-dot"></span>
+                    <div class="timeline-card">
+                        <span class="date">Aug 2025 – Dec 2025</span>
+                        <h5>CTS Student Technician</h5>
+                        <div class="company">North Carolina A&amp;T State University</div>
+                        <ul>
+                            <li>Delivered campus IT support under formal change-control workflows.</li>
+                            <li>Enforced access governance and credential management per security policy.</li>
+                            <li>Maintained privileged-access records supporting audit readiness.</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="timeline-item" data-aos="fade-right">
+                    <span class="timeline-dot"></span>
+                    <div class="timeline-card">
+                        <span class="date">Aug 2023 – Jun 2024</span>
+                        <h5>Business Analyst</h5>
+                        <div class="company">Charter Communications</div>
+                        <ul>
+                            <li>Analyzed 100K+ customer records in SQL/Excel for the Xumo Box launch — 25% acquisition lift.</li>
+                            <li>Built executive Power BI dashboards that became the standing weekly sales review (+15% close rates).</li>
+                            <li>Authored BRDs and process flows that reduced cross-team confusion by 40%.</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="timeline-item" data-aos="fade-left">
+                    <span class="timeline-dot"></span>
+                    <div class="timeline-card">
+                        <span class="date">Jan 2023 – Jul 2023</span>
+                        <h5>Business Analyst Intern</h5>
+                        <div class="company">ADT</div>
+                        <ul>
+                            <li>Built sales forecasting models improving prediction accuracy by 30%.</li>
+                            <li>Automated SQL/Excel reporting, recovering 60% of analyst capacity.</li>
+                            <li>Campaign analysis with marketing lifted lead conversion by 25%.</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="timeline-item" data-aos="fade-right">
+                    <span class="timeline-dot"></span>
+                    <div class="timeline-card">
+                        <span class="date">Jan 2016 – Dec 2022</span>
+                        <h5>Store Manager</h5>
+                        <div class="company">United Pacific</div>
+                        <ul>
+                            <li>Owned P&amp;L and operations for a 15-person, multi-shift team; cut OpEx 20% YoY.</li>
+                            <li>Led CRM migration with zero downtime; reduced stock discrepancies from 15% to 3%.</li>
+                            <li>Cut new-hire onboarding time 50% via standardized SOPs.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="section bg-light">
+        <div class="container text-center">
+            <h2 class="section-title" data-aos="fade-up">Key Skills</h2>
+            <p class="section-sub" data-aos="fade-up">The tools, methods, and strengths I bring to every project.</p>
+
+            <h5 class="skills-group-title" data-aos="fade-up"><i class="fa-solid fa-toolbox"></i>Analytics &amp; BI Tools</h5>
+            <div class="d-flex flex-wrap justify-content-center" data-aos="fade-up">
+                <div class="skill-card m-2"><i class="fa-solid fa-database" style="color:#2575fc;"></i><p>SQL</p></div>
+                <div class="skill-card m-2"><i class="fa-brands fa-python" style="color:#3776ab;"></i><p>Python</p></div>
+                <div class="skill-card m-2"><i class="fa-brands fa-r-project" style="color:#1e6bb8;"></i><p>R</p></div>
+                <div class="skill-card m-2"><i class="fa-solid fa-chart-column" style="color:#f2c811;"></i><p>Power BI</p></div>
+                <div class="skill-card m-2"><i class="fa-solid fa-chart-pie" style="color:#e97627;"></i><p>Tableau</p></div>
+                <div class="skill-card m-2"><i class="fa-solid fa-file-excel" style="color:#1d7044;"></i><p>Advanced Excel</p></div>
+                <div class="skill-card m-2"><i class="fa-brands fa-jira" style="color:#0052cc;"></i><p>Jira</p></div>
+                <div class="skill-card m-2"><i class="fa-brands fa-confluence" style="color:#1868db;"></i><p>Confluence</p></div>
+                <div class="skill-card m-2"><i class="fa-brands fa-figma" style="color:#a259ff;"></i><p>Figma</p></div>
+                <div class="skill-card m-2"><i class="fa-solid fa-diagram-project" style="color:#ffd02f;"></i><p>Miro &amp; Visio</p></div>
+            </div>
+
+            <h5 class="skills-group-title" data-aos="fade-up"><i class="fa-solid fa-clipboard-check"></i>Business Analysis</h5>
+            <div data-aos="fade-up">
+                <span class="chip chip-ba">Requirements Elicitation</span>
+                <span class="chip chip-ba">BRD / FRD Authoring</span>
+                <span class="chip chip-ba">User Stories &amp; Acceptance Criteria</span>
+                <span class="chip chip-ba">UAT</span>
+                <span class="chip chip-ba">Traceability Matrices</span>
+                <span class="chip chip-ba">Gap Analysis</span>
+                <span class="chip chip-ba">Process Mapping</span>
+                <span class="chip chip-ba">Agile (Scrum &amp; Kanban)</span>
+                <span class="chip chip-ba">Sprint Planning</span>
+                <span class="chip chip-ba">Backlog Grooming</span>
+            </div>
+
+            <h5 class="skills-group-title" data-aos="fade-up"><i class="fa-solid fa-magnifying-glass-chart"></i>Data &amp; Analytics</h5>
+            <div data-aos="fade-up">
+                <span class="chip chip-data">Forecasting Models</span>
+                <span class="chip chip-data">KPI Design</span>
+                <span class="chip chip-data">Executive Dashboards</span>
+                <span class="chip chip-data">Predictive Modeling</span>
+                <span class="chip chip-data">ETL &amp; Data Warehousing</span>
+                <span class="chip chip-data">Data Visualization</span>
+                <span class="chip chip-data">Market Research</span>
+                <span class="chip chip-data">Trend Analysis</span>
+            </div>
+
+            <h5 class="skills-group-title" data-aos="fade-up"><i class="fa-solid fa-people-group"></i>Professional Strengths</h5>
+            <div data-aos="fade-up">
+                <span class="chip chip-soft">Stakeholder Management</span>
+                <span class="chip chip-soft">Change Management</span>
+                <span class="chip chip-soft">Root Cause Analysis</span>
+                <span class="chip chip-soft">Cross-Functional Collaboration</span>
+                <span class="chip chip-soft">Problem Solving</span>
+                <span class="chip chip-soft">Critical Thinking</span>
+                <span class="chip chip-soft">Adaptability</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="work" class="section">
+        <div class="container text-center">
+            <h2 class="section-title" data-aos="fade-up">Projects &amp; Impact</h2>
+            <p class="section-sub" data-aos="fade-up">End-to-end analytics projects spanning federal compliance, healthcare policy, insurance, lending risk, and retention strategy &mdash; each delivering quantified business impact.</p>
+            <div class="row mt-5 g-4">
+
+                <div class="col-md-6 col-lg-4" data-aos="zoom-in-up">
+                    <div class="card work-card">
+                        <div class="card-top"></div>
+                        <div class="card-body p-4 text-start">
+                            <div class="icon-wrap"><i class="fa-solid fa-magnifying-glass-dollar"></i></div>
+                            <h5 class="card-title">Federal Spending Anomaly Detection</h5>
+                            <p class="card-text">Intelligent risk-ranking system for NASA contract awards. Ingests 16,866 real awards from the USASpending API into a PostgreSQL star schema via a 3-stage ETL pipeline, then applies 6 documented rule-based detection rules with a weighted 0&ndash;12 risk score &mdash; flagging 2,687 awards (incl. a $22.4B Boeing contract triggering 4 rules) and clearing 14,179 as routine. Delivered with full BA artifacts: BRD, user stories, RTM, Section 508 review &amp; test cases.</p>
+                            <div class="mb-2"><span class="tag">Python</span><span class="tag">PostgreSQL</span><span class="tag">ETL</span><span class="tag">Star Schema</span><span class="tag">Power BI</span><span class="tag">Tableau</span></div>
+                            <p class="result mb-0"><i class="fa-solid fa-arrow-trend-down me-1"></i>84% reduction in review search space</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-6 col-lg-4" data-aos="zoom-in-up" data-aos-delay="100">
+                    <div class="card work-card">
+                        <div class="card-top"></div>
+                        <div class="card-body p-4 text-start">
+                            <div class="icon-wrap"><i class="fa-solid fa-pills"></i></div>
+                            <h5 class="card-title">Medicare Part D GLP-1 Analytics &amp; Policy Forecasting</h5>
+                            <p class="card-text">Five-year analysis of $276B in CMS Part D drug spending. Decomposed $97B of growth into volume (+$22B), price/mix (+$66B) and interaction (+$8B) with advanced DuckDB SQL, quantified a 590,000+ off-label Ozempic prescription signal, and built a live 3-scenario Streamlit forecaster projecting $64.7B annual GLP-1 spend by 2027 with tunable IRA-negotiation and obesity-coverage policy levers.</p>
+                            <div class="mb-2"><span class="tag">DuckDB SQL</span><span class="tag">Python</span><span class="tag">Streamlit</span><span class="tag">Power BI</span><span class="tag">Altair</span></div>
+                            <p class="result mb-2"><i class="fa-solid fa-chart-line me-1"></i>$5B+/yr policy gap uncovered</p>
+                            <a class="project-link" href="https://partd-analytics-hari.streamlit.app" target="_blank" rel="noopener"><i class="fa-solid fa-up-right-from-square me-1"></i>Live Streamlit App</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-6 col-lg-4" data-aos="zoom-in-up" data-aos-delay="200">
+                    <div class="card work-card">
+                        <div class="card-top"></div>
+                        <div class="card-body p-4 text-start">
+                            <div class="icon-wrap"><i class="fa-solid fa-car-on"></i></div>
+                            <h5 class="card-title">Auto Insurance Loss Analysis &amp; Underwriting Optimization</h5>
+                            <p class="card-text">Actuarial analysis of 678,013 policies and 36,102 claims (French Motor TPL). Pareto analysis revealed 249 policies (0.04% of book) drive 37.9% of losses, and drivers 18&ndash;25 run a 173.8% loss ratio &mdash; 3&times; book average. Modeled and stress-tested three underwriting actions (repricing, selective non-write, targeted non-renewal) improving the book loss ratio from 57.8% to 34.5%.</p>
+                            <div class="mb-2"><span class="tag">Python</span><span class="tag">SQL</span><span class="tag">Pandas</span><span class="tag">Tableau</span><span class="tag">Jupyter</span></div>
+                            <p class="result mb-0"><i class="fa-solid fa-sack-dollar me-1"></i>&euro;21.4M projected annual profit improvement</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-6 col-lg-4" data-aos="zoom-in-up" data-aos-delay="100">
+                    <div class="card work-card">
+                        <div class="card-top"></div>
+                        <div class="card-body p-4 text-start">
+                            <div class="icon-wrap"><i class="fa-solid fa-graduation-cap"></i></div>
+                            <h5 class="card-title">Student Loan Default Predictor</h5>
+                            <p class="card-text">Institutional risk classification on 4,189 US institutions from College Scorecard data. Compared Logistic Regression (97% accuracy, 0.996 ROC-AUC) vs Random Forest (100% accuracy, 1.0 ROC-AUC), revealing for-profit institutions carry a 53% high-risk rate vs 9% for public &mdash; a 5.8&times; differential enabling enrollment-time risk scoring instead of post-default intervention. Delivered with an executive memo to the CRO.</p>
+                            <div class="mb-2"><span class="tag">Python</span><span class="tag">scikit-learn</span><span class="tag">Jupyter</span><span class="tag">ML</span></div>
+                            <p class="result mb-2"><i class="fa-solid fa-bullseye me-1"></i>1.0 ROC-AUC · 5.8&times; risk differential found</p>
+                            <a class="project-link" href="https://github.com/HarryAcharya/student-loan-default-predictor" target="_blank" rel="noopener"><i class="fa-brands fa-github me-1"></i>View on GitHub</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-6 col-lg-4" data-aos="zoom-in-up" data-aos-delay="200">
+                    <div class="card work-card">
+                        <div class="card-top"></div>
+                        <div class="card-body p-4 text-start">
+                            <div class="icon-wrap"><i class="fa-solid fa-users-rays"></i></div>
+                            <h5 class="card-title">Member Churn Prediction &amp; Retention Playbook</h5>
+                            <p class="card-text">Persona-driven retention framework on 7,043 member records. Calibrated XGBoost model (0.84 AUC, Brier 0.164&rarr;0.137) with SHAP interpretability, segmented the 1,409 highest-risk members into 4 behavioral personas, and designed persona-specific interventions stress-tested across 9 scenarios &mdash; all positive, worst case 4.5&times; ROI.</p>
+                            <div class="mb-2"><span class="tag">XGBoost</span><span class="tag">SHAP</span><span class="tag">K-means</span><span class="tag">SQL</span><span class="tag">Tableau</span></div>
+                            <p class="result mb-2"><i class="fa-solid fa-arrow-trend-up me-1"></i>$603K net savings · 8.2&times; ROI</p>
+                            <a class="project-link me-3" href="https://github.com/HarryAcharya/member-churn-retention" target="_blank" rel="noopener"><i class="fa-brands fa-github me-1"></i>GitHub</a>
+                            <a class="project-link" href="https://public.tableau.com/app/profile/hari.acharya2369/viz/MemberChurnRetentionPersonaStrategyProgramROI_twb/MemberChurnDashboard" target="_blank" rel="noopener"><i class="fa-solid fa-chart-pie me-1"></i>Live Tableau Dashboard</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-6 col-lg-4" data-aos="zoom-in-up" data-aos-delay="300">
+                    <div class="card work-card">
+                        <div class="card-top"></div>
+                        <div class="card-body p-4 text-start">
+                            <div class="icon-wrap"><i class="fa-solid fa-rocket"></i></div>
+                            <h5 class="card-title">Xumo Box Launch Analytics</h5>
+                            <p class="card-text">Professional BA impact at Charter Communications: analyzed 100K+ customer records in SQL and Excel and led market research with 1,000+ users to shape product positioning and promotional strategy. Built executive Power BI dashboards that became the standing weekly sales review (+15% close rates).</p>
+                            <div class="mb-2"><span class="tag">SQL</span><span class="tag">Power BI</span><span class="tag">Excel</span><span class="tag">Market Research</span></div>
+                            <p class="result mb-0"><i class="fa-solid fa-arrow-trend-up me-1"></i>25% acquisition lift in 30 days</p>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+            <div class="mt-5" data-aos="zoom-in">
+                <a href="https://github.com/HarryAcharya" target="_blank" rel="noopener" class="btn btn-lg me-2 mb-2" style="background: var(--grad); color:#fff; font-weight:700; border-radius:50px; padding: 13px 36px;">
+                    <i class="fa-brands fa-github me-2"></i>See More on GitHub
+                </a>
+                <a href="https://public.tableau.com/app/profile/hari.acharya2369" target="_blank" rel="noopener" class="btn btn-lg mb-2" style="background:#fff; color: var(--primary); font-weight:700; border-radius:50px; padding: 13px 36px; border: 2px solid var(--primary);">
+                    <i class="fa-solid fa-chart-pie me-2"></i>Tableau Public Profile
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Education & Certifications -->
+    <section id="education" class="section bg-light">
+        <div class="container text-center">
+            <h2 class="section-title" data-aos="fade-up">Education &amp; Certifications</h2>
+            <p class="section-sub" data-aos="fade-up">Academic foundation paired with industry-recognized credentials.</p>
+            <div class="row mt-5 g-4">
+                <div class="col-lg-6">
+                    <div class="row g-4">
+                        <div class="col-12" data-aos="fade-right">
+                            <div class="edu-card">
+                                <div class="edu-icon"><i class="fa-solid fa-graduation-cap"></i></div>
+                                <h5>M.S. in Data Analytics</h5>
+                                <div class="school">North Carolina A&amp;T State University</div>
+                                <div class="meta">Expected Dec 2026 · GPA 3.92 / 4.00</div>
+                                <p class="mt-3 mb-0" style="font-size:.9rem; color:#666;">Coursework: Business Analytics, BI, Predictive Analytics &amp; Machine Learning, Data Warehousing, Statistical Deep Learning, Data Wrangling &amp; Visualization, Data Privacy &amp; Security.</p>
+                            </div>
+                        </div>
+                        <div class="col-12" data-aos="fade-right" data-aos-delay="100">
+                            <div class="edu-card">
+                                <div class="edu-icon"><i class="fa-solid fa-building-columns"></i></div>
+                                <h5>Bachelor of Business Administration (BBA)</h5>
+                                <div class="school">Tribhuvan University</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6" data-aos="fade-left">
+                    <div class="cert-item">
+                        <i class="fa-solid fa-certificate"></i>
+                        <div><strong>ICAgile Certified Professional – Agile Product Ownership (ICP-APO)</strong><span>ICAgile</span></div>
+                    </div>
+                    <div class="cert-item">
+                        <i class="fa-solid fa-certificate"></i>
+                        <div><strong>CBAP® Exam Preparation Specialization</strong><span>Starweaver (IIBA EEP) via Coursera</span></div>
+                    </div>
+                    <div class="cert-item">
+                        <i class="fa-solid fa-certificate"></i>
+                        <div><strong>IBM Business Analyst Professional Certificate</strong><span>Coursera</span></div>
+                    </div>
+                    <div class="cert-item">
+                        <i class="fa-solid fa-certificate"></i>
+                        <div><strong>Atlassian Agile Project Management Professional Certificate</strong><span>Coursera</span></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="section contact-section">
+        <div class="container text-center">
+            <h2 class="section-title" data-aos="fade-up">Get In Touch</h2>
+            <p class="section-sub" data-aos="fade-up">I'm currently open to Business Analyst, Technical BA, Product Analyst, and Technology Consulting opportunities. Let's connect!</p>
+            <div class="row mt-5 g-4 justify-content-center">
+                <div class="col-md-4" data-aos="zoom-in">
+                    <a class="contact-card" href="mailto:acharyaharry95@gmail.com">
+                        <i class="fa-solid fa-envelope"></i>
+                        <h6>Email</h6>
+                        <p>acharyaharry95@gmail.com</p>
+                    </a>
+                </div>
+                <div class="col-md-4" data-aos="zoom-in" data-aos-delay="100">
+                    <a class="contact-card" href="https://www.linkedin.com/in/acharya-hari" target="_blank" rel="noopener">
+                        <i class="fa-brands fa-linkedin"></i>
+                        <h6>LinkedIn</h6>
+                        <p>linkedin.com/in/acharya-hari</p>
+                    </a>
+                </div>
+                <div class="col-md-4" data-aos="zoom-in" data-aos-delay="200">
+                    <a class="contact-card" href="https://github.com/HarryAcharya" target="_blank" rel="noopener">
+                        <i class="fa-brands fa-github"></i>
+                        <h6>GitHub</h6>
+                        <p>github.com/HarryAcharya</p>
+                    </a>
+                </div>
+            </div>
+            <form class="contact-form mt-5 mx-auto" style="max-width: 760px;" action="https://formsubmit.co/acharyaharry95@gmail.com" method="POST">
+                <input type="hidden" name="_subject" value="New message from your portfolio!">
+                <input type="hidden" name="_captcha" value="false">
+                <div class="row g-3">
+                    <div class="col-md-6" data-aos="fade-right"><input type="text" name="name" class="form-control" placeholder="Your Name" required></div>
+                    <div class="col-md-6" data-aos="fade-left"><input type="email" name="email" class="form-control" placeholder="Your Email" required></div>
+                    <div class="col-12" data-aos="fade-up"><textarea name="message" class="form-control" rows="5" placeholder="Your Message" required></textarea></div>
+                </div>
+                <button type="submit" class="btn btn-send mt-4" data-aos="zoom-in"><i class="fa-regular fa-paper-plane me-2"></i>Send Message</button>
+            </form>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="text-center">
+        <div class="container">
+            <div class="social-icons mb-3">
+                <a href="https://www.linkedin.com/in/acharya-hari" target="_blank" rel="noopener" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+                <a href="https://github.com/HarryAcharya" target="_blank" rel="noopener" aria-label="GitHub"><i class="fa-brands fa-github"></i></a>
+                <a href="mailto:acharyaharry95@gmail.com" aria-label="Email"><i class="fa-solid fa-envelope"></i></a>
+            </div>
+            <p class="mb-0">&copy; <span id="year"></span> Hari Acharya · Business Analyst · All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <button id="backToTop" aria-label="Back to top"><i class="fa-solid fa-arrow-up"></i></button>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+    <script>
+        AOS.init({ once: true });
+
+        // Footer year
+        document.getElementById('year').textContent = new Date().getFullYear();
+
+        // Typing effect
+        const roles = ["Business Analyst", "Agile Practitioner", "Data Analytics Specialist", "Product Analyst", "Dashboard & KPI Designer"];
+        const typedEl = document.getElementById('typed');
+        let roleIdx = 0, charIdx = 0, deleting = false;
+        function typeLoop() {
+            const current = roles[roleIdx];
+            typedEl.textContent = current.substring(0, charIdx);
+            if (!deleting && charIdx < current.length) {
+                charIdx++;
+                setTimeout(typeLoop, 90);
+            } else if (!deleting && charIdx === current.length) {
+                deleting = true;
+                setTimeout(typeLoop, 1800);
+            } else if (deleting && charIdx > 0) {
+                charIdx--;
+                setTimeout(typeLoop, 45);
+            } else {
+                deleting = false;
+                roleIdx = (roleIdx + 1) % roles.length;
+                setTimeout(typeLoop, 350);
+            }
+        }
+        typeLoop();
+
+        // Navbar shrink + back-to-top
+        const nav = document.getElementById('mainNav');
+        const topBtn = document.getElementById('backToTop');
+        window.addEventListener('scroll', () => {
+            nav.classList.toggle('shrink', window.scrollY > 60);
+            topBtn.classList.toggle('show', window.scrollY > 500);
+        });
+        topBtn.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
+
+        // Active nav link highlighting
+        const sections = document.querySelectorAll('section[id]');
+        const navLinks = document.querySelectorAll('.navbar .nav-link');
+        window.addEventListener('scroll', () => {
+            let current = '';
+            sections.forEach(sec => {
+                if (window.scrollY >= sec.offsetTop - 120) current = sec.getAttribute('id');
+            });
+            navLinks.forEach(link => {
+                link.classList.toggle('active', link.getAttribute('href') === '#' + current);
+            });
+        });
+
+        // Collapse mobile menu on link click
+        document.querySelectorAll('.navbar-nav .nav-link').forEach(link => {
+            link.addEventListener('click', () => {
+                const navCollapse = document.querySelector('.navbar-collapse');
+                if (navCollapse.classList.contains('show')) {
+                    bootstrap.Collapse.getInstance(navCollapse).hide();
+                }
+            });
+        });
+    </script>
+</body>
+
+</html>
